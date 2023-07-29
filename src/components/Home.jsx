@@ -16,7 +16,7 @@ const Home = () => {
             className="text-4xl sm:text-7xl
            font-bold text-white"
           >
-            Olá! Sou um desenvolvedor Web Full Stack.
+            Olá! Sou um Desenvolvedor Web Full Stack.
           </h2>
           <p className="text-gray-500 py-8 max-w-md">
             Desenvolvedor web full stack com 1 ano de experiência. Apaixonado

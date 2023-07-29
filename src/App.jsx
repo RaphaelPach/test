@@ -5,6 +5,7 @@ import Footer from "./components/Footer"
 import Home from "./components/Home"
 import NavBar from "./components/NavBar"
 import SocialLinks from "./components/SocialLinks"
+import MyFavoriteMovies from "./components/MyFavoriteMovies";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <About />
     <Experiences />
     <SocialLinks />
+    <MyFavoriteMovies />
     <Contact />
     <Footer />
     </div>
