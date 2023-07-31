@@ -12,8 +12,9 @@ import last from "../assets/last.jpg";
 import lost from "../assets/translation.jpg";
 import solaris from "../assets/solar.png";
 import spider from "../assets/magire.jpg";
-import akiras from "../assets/kaneda.jpg";
+import akiras from "../assets/kanedas.jpg";
 import bad from "../assets/mclovin.png";
+import { BsArrowThroughHeartFill } from "react-icons/bs";
 
 export default () => {
   const movies = [
@@ -34,40 +35,55 @@ export default () => {
   ];
 
   return (
-    <div className="w-full flex justify-center items-center bg-gradient-to-b from-gray-800 to-[rgb(30,40,54)] min-h-screen">
-      <div className="flex justify-center items-center max-w-6xl min-h-screen bg-gradient-to-b from-gray-800 to-[rgb(30,40,54)] text-white">
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={30}
-          slidesPerView={1}
-          slidesPerGroup={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          loop
-          className="w-full max-w-4xl"
-        >
-          {movies.map(({ id, title, img }) => (
-            <SwiperSlide key={id} className="w-full">
-              <div className="rounded-lg shadow-md bg-white overflow-hidden min-h-fit">
-                {/*     <img
-                  src={img}
-                  alt={title}
-                  className="h-96 w-full object-cover mx-auto"
-                /> */}
-                <div
-                  className="bg-cover bg-center h-[500px] w-full"
-                  style={{ backgroundImage: `url(${img})` }}
-                ></div>
-              </div>
-              <div className="p-4">
-                <h1 className="text-xl md:text-2xl font-bold mb-2">{title}</h1>
-                {/* Adicione qualquer outro conteúdo adicional aqui, se necessário */}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <>
+      <div name="portfólio" className="bg-gradient-to-b from-gray-800 to-[rgb(30,40,54)] flex flex-col items-center">
+        <p className="text-6xl font-bold border-b-4 border-purple-900 p-2 text-white inline">
+          Portfólio
+        </p>
+        <div className="py-4">
+          <p className="text-3xl mb-4 text-white">
+            Olá, amores! Enquanto eu refatoro e estilizo meus projetos,
+            compartilho com vocês os meus 10 filmes favoritos.
+          </p>
+          <span className="text-2xl font-bold text-white flex justify-center items-center">
+            Tem o link do github na lateral. Sejam pacientes. abraços
+            <span className="text-purple-800 p-2"><BsArrowThroughHeartFill /></span>
+          </span>
+        </div>
       </div>
-    </div>
+
+      <div className="w-full flex justify-center items-center bg-gradient-to-b from-gray-800 to-[rgb(30,40,54)] min-h-screen">
+        <div className="flex justify-center items-center max-w-full min-h-screen bg-gradient-to-b from-gray-800 to-[rgb(30,40,54)] text-white">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={30}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop
+            className="w-full md:w-12/12 max-w-4xl"
+          >
+            {movies.map(({ id, title, img }) => (
+              <SwiperSlide key={id} className="w-full">
+                <div className="rounded-lg shadow-md bg-white overflow-hidden min-h-fit">
+                  <div
+                    className="bg-cover bg-center h-[500px] w-full"
+                    style={{ backgroundImage: `url(${img})` }}
+                  ></div>
+                </div>
+                <div className="p-4">
+                  <h1 className="text-xl md:text-2xl font-bold mb-2">
+                    {title}
+                  </h1>
+                  {/* Adicione qualquer outro conteúdo adicional aqui, se necessário */}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    </>
   );
 };
